@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
     cout << "loop" << endl;
     img = cvQueryFrame(capture);
     cvCopy(img, img_result);
-    for(int j = 0; j < 10; j++){
+    for(int i = 0; i < 10; i++){
       img = cvQueryFrame(capture);
       cvShowImage(winNameCapture, img);
       
@@ -41,8 +41,8 @@ int main(int argc, char** argv) {
       cvClearMemStorage(storage);
       lines = cvHoughLines2(img_gray, storage, CV_HOUGH_PROBABILISTIC, 1, CV_PI / 180, 50, 50, 10);
       cout << lines->total << "lines" << endl;
-      for (int i = 0; i < lines->total; i++) {
-	CvPoint *p = (CvPoint *)cvGetSeqElem(lines, i);
+      for (int j = 0; j < lines->total; j++) {
+	CvPoint *p = (CvPoint *)cvGetSeqElem(lines, j);
 	cvLine(img_result, p[0], p[1], CV_RGB (0, 0, 255), 3, 8, 0);
       }
       cvClearSeq(lines);
