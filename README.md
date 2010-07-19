@@ -1,5 +1,6 @@
 OpenCV Study
 ============
+Image processing study using OpenCV
 
 Environemnt
 ===========
